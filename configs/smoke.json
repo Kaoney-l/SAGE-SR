@@ -1,0 +1,10 @@
+{
+  "rounds": 2,
+  "evaluations_per_round": 120,
+  "hidden_size": 32,
+  "max_depth": 3,
+  "operators": ["+", "-", "*", "R"],
+  "distillation_epochs": 1,
+  "early_stop_error": null,
+  "seed": 7
+}

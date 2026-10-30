@@ -1,0 +1,32 @@
+[build-system]
+requires = ["scikit-build-core>=0.10", "pybind11>=2.13", "ninja>=1.11"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "sage-sr"
+version = "0.1.0"
+description = "Search-adaptive semantic guidance with evidence feedback for symbolic regression"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+dependencies = ["numpy>=1.26", "torch>=2.2", "sympy>=1.12"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+sage-sr = "sage_sr.cli:main"
+
+[tool.scikit-build]
+cmake.build-type = "Release"
+wheel.packages = ["src/sage_sr"]
+wheel.license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md", "third_party/licenses/Eigen-MPL-2.0.txt", "third_party/licenses/pybind11-BSD-3-Clause.txt"]
+build-dir = ".release/build/{wheel_tag}"
+
+[tool.scikit-build.sdist]
+include = ["src/sage_sr/**", "cpp/**", "configs/**", "examples/**", "tests/**", "docs/**", "third_party/**", "CMakeLists.txt", "README.md", "LICENSE", "THIRD_PARTY_NOTICES.md", ".env.example"]
+exclude = [".release/**", "**/__pycache__/**", "**/*.pyd", "**/*.so", "**/*.pyc"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:hydra_pytest"

@@ -1,0 +1,7 @@
+{
+  "operator_prior": {"+": 0.8, "-": 0.4, "*": 0.9, "R": 0.5},
+  "variable_relevance": {"x0": 1.0},
+  "structural_family": {"polynomial": 0.8, "additive": 0.7},
+  "self_confidence": {"operator_prior": 0.5, "variable_relevance": 0.5},
+  "notes": "Explicit fixed prior for the offline integration example."
+}

@@ -1,0 +1,17 @@
+{
+  "rounds": 4,
+  "evaluations_per_round": 25000,
+  "validation_fraction": 0.15,
+  "eta": 0.99,
+  "gp_rate": 0.5,
+  "lm_iterations": 10,
+  "training_elites": 8,
+  "inherited_paths": 6,
+  "representative_candidates": 6,
+  "demonstration_capacity": 32,
+  "trust_cap": 3.0,
+  "trust_sensitivity": 10.0,
+  "conflict_threshold": -0.3,
+  "conflict_patience": 2,
+  "early_stop_error": 0.000001
+}
